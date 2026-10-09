@@ -19,7 +19,7 @@ test.afterEach(async()=>{
 test.afterAll(async()=>{
     console.log(`Running after all tests`)
 })
-test("sauce demo login test with page object", async ({ page,loginPage }) => {
+test("sauce demo login test with page object",{tag:['@SmokeTest']}, async ({ page,loginPage }) => {
     console.log(`Test 1 execution started`)
     //const loginPage=new LoginPage(page);
     loginPage.goToUrl();
@@ -30,7 +30,7 @@ test("sauce demo login test with page object", async ({ page,loginPage }) => {
   console.log(`Product counts: ${prodCount}`);
 });
 
-test("add first product", async ({ page,loginPage,cartPage }) => {
+test("add first product",{tag:['@SmokeTest']}, async ({ page,loginPage,cartPage }) => {
     console.log(`Test 2 execution started`)
     //const loginPage=new LoginPage(page)
     //const cartPage=new CartPage(page)
