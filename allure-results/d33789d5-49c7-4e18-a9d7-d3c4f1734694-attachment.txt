@@ -1,0 +1,6 @@
+Running before all tests
+Running before each tests
+Test 1 execution started
+Product counts: 0
+Running after each tests
+Running after all tests
