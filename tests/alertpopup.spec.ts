@@ -4,7 +4,7 @@ test.describe('SmokeTesting',()=>{
 
 test('Popup and alert validaiton',async({page})=>{
     await page.goto('https://testautomationpractice.blogspot.com/');
-    await page.on('dialog',dialog=>{,
+    await page.on('dialog',dialog=>{
         console.log(dialog.message())
         dialog.accept();
     })

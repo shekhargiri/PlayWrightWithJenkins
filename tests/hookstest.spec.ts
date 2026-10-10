@@ -19,25 +19,25 @@ test.afterEach(async()=>{
 test.afterAll(async()=>{
     console.log(`Running after all tests`)
 })
-test("sauce demo login test with page object",{tag:['@SmokeTest']}, async ({ page,loginPage }) => {
+test("sauce demo login test with page object",{tag:'@SmokeTest'}, async ({ page,loginPage }) => {
     console.log(`Test 1 execution started`)
     //const loginPage=new LoginPage(page);
-    loginPage.goToUrl();
-    loginPage.loginToSauceDemo();
+    await loginPage.goToUrl();
+    await loginPage.loginToSauceDemo();
   await expect(page).toHaveTitle("Swag Labs");
   const prodCountLocator: Locator = page.locator(".inventory_item_label");
   const prodCount = await prodCountLocator.count();
   console.log(`Product counts: ${prodCount}`);
 });
 
-test("add first product",{tag:['@SmokeTest']}, async ({ page,loginPage,cartPage }) => {
+test("add first product",{tag:'@SmokeTest'}, async ({ page,loginPage,cartPage }) => {
     console.log(`Test 2 execution started`)
     //const loginPage=new LoginPage(page)
     //const cartPage=new CartPage(page)
-    loginPage.goToUrl();
-    loginPage.loginToSauceDemo()
-    cartPage.clickCart()
-    cartPage.cartLink.click();
+    await loginPage.goToUrl();
+    await loginPage.loginToSauceDemo()
+    await cartPage.clickCart()
+    await cartPage.cartLink.click();
   await expect(page.locator('.title')).toHaveText('Your Cart');
 
 });
